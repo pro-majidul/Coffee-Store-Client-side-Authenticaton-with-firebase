@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import banner from '../assets/images/more/logo1.png'
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthProvider';
 
 const Navbar = () => {
+    const { user } = useContext(AuthContext)
     return (
         <div className='bg-bgnav bg-no-repeat bg-cover bg-center py-1'>
 
@@ -28,7 +30,7 @@ const Navbar = () => {
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                             <NavLink to='/' className='btn '>Home</NavLink>
                             <NavLink to='addCoffee' className='btn '>Add Coffee</NavLink>
-                            <NavLink to='/signin' className='btn '>Sign in</NavLink>
+
 
                         </ul>
                     </div>
@@ -41,11 +43,15 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal px-1 gap-5">
                         <NavLink to='/' className='btn '>Home</NavLink>
                         <NavLink to='addCoffee' className='btn '>Add Coffee</NavLink>
-                        <NavLink to='/signin' className='btn '>Sign in</NavLink>
+
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    {
+                        user && user ? <button className='btn'>LogOut</button>
+                            : <NavLink to='/signin' className='btn '>Sign in</NavLink>
+
+                    }
                 </div>
             </div>
         </div>
