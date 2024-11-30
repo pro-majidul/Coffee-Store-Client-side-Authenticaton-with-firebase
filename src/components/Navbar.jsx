@@ -30,6 +30,7 @@ const Navbar = () => {
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                             <NavLink to='/' className='btn '>Home</NavLink>
                             <NavLink to='addCoffee' className='btn '>Add Coffee</NavLink>
+                            <NavLink to='users' className='btn '>Users</NavLink>
 
 
                         </ul>
@@ -43,6 +44,7 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal px-1 gap-5">
                         <NavLink to='/' className='btn '>Home</NavLink>
                         <NavLink to='addCoffee' className='btn '>Add Coffee</NavLink>
+                        <NavLink to='users' className='btn '>Users</NavLink>
 
                     </ul>
                 </div>
