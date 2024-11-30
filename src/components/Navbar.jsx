@@ -4,7 +4,14 @@ import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 
 const Navbar = () => {
-    const { user } = useContext(AuthContext)
+    const { user ,setUser ,userLogout } = useContext(AuthContext)
+
+    const handelLogout =()=>{
+        userLogout()
+        .then(() =>{
+            setUser(null)
+        }).catch(error => console.log(error))
+    }
     return (
         <div className='bg-bgnav bg-no-repeat bg-cover bg-center py-1'>
 
@@ -50,7 +57,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        user && user ? <button className='btn'>LogOut</button>
+                        user && user ? <button onClick={handelLogout} className='btn'>LogOut</button>
                             : <NavLink to='/signin' className='btn '>Sign in</NavLink>
 
                     }
