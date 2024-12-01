@@ -20,7 +20,7 @@ const Signup = () => {
                     email, name, createTime, lastSignInTime
                 }
                 // set data to db
-                fetch('http://localhost:3000/users', {
+                fetch('https://coffee-store-server-authentiation-with-firebase.vercel.app/users', {
                     method: "POST",
                     headers: {
 

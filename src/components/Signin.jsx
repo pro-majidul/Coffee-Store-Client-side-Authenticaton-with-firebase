@@ -17,7 +17,7 @@ const Signin = () => {
                 const updateInfo = {
                     email, lastSignInTime
                 }
-                fetch('http://localhost:3000/users', {
+                fetch('https://coffee-store-server-authentiation-with-firebase.vercel.app/users', {
                     method: 'PATCH',
                     headers: {
                         "content-type": "application/json"

@@ -21,7 +21,7 @@ const AddCoffee = () => {
             name, chef, suplier, test, category, details, photo
         }
 
-        fetch('http://localhost:3000/coffee', {
+        fetch('https://coffee-store-server-authentiation-with-firebase.vercel.app/coffee', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
